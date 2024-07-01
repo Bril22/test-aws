@@ -1,5 +1,5 @@
 # Stage 1
-
+FROM --platform=linux/amd64 node:lts-alpine
 FROM node:18 as builder
 
 WORKDIR /build
@@ -15,7 +15,7 @@ RUN npm run build
 
 
 # Stage 2
-
+FROM --platform=linux/amd64 node:lts-alpine
 FROM node:18 as runner
 
 WORKDIR /app
